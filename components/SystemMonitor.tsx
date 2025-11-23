@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export const SystemMonitor: React.FC = () => {
   const [dataPoints, setDataPoints] = useState<number[]>(new Array(20).fill(50));

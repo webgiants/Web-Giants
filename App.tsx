@@ -35,7 +35,7 @@ function App() {
     {
       title: "Android Native",
       desc: "High-performance native apps crafted with Kotlin. We engineer for fluidity, ensuring your application feels like a natural extension of the OS.",
-      price: "From ₹8,000",
+      price: "From ₹45,000",
       features: ["Material Design 3", "Offline-First", "Play Store Launch"],
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -46,7 +46,7 @@ function App() {
     {
       title: "Full-Stack Web",
       desc: "Robust web architectures utilizing React & Node.js. We deliver scalable, SEO-ready solutions that grow effortlessly with your business.",
-      price: "From ₹2,000",
+      price: "From ₹30,000",
       features: ["Server-Side Rendering", "Responsive", "Secure API"],
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -203,7 +203,7 @@ function App() {
             </p>
           </div>
           <div className="flex gap-8 text-sm font-medium">
-             <a href="mailto:webgiants.enquiries@gmail.com" className="text-slate-600 hover:text-primary transition-colors">Support</a>
+             <a href="mailto:webgiants.enquirues@gmail.com" className="text-slate-600 hover:text-primary transition-colors">Support</a>
              <a href="#" className="text-slate-600 hover:text-primary transition-colors">Twitter</a>
              <a href="https://www.instagram.com/web.giants/" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-primary transition-colors">Instagram</a>
           </div>

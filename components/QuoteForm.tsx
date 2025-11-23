@@ -56,7 +56,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `mailto:webgiants.enquiries@gmail.com?subject=Project Enquiry: ${formData.name}&body=Type: ${formData.projectType}%0D%0ADetails: ${encodeURIComponent(formData.details)}%0D%0ABudget: ${formData.budget}`;
+    window.location.href = `mailto:webgiants.enquirues@gmail.com?subject=Project Enquiry: ${formData.name}&body=Type: ${formData.projectType}%0D%0ADetails: ${encodeURIComponent(formData.details)}%0D%0ABudget: ${formData.budget}`;
   };
 
   const budgetOptions = [

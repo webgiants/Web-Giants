@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { generateProjectBlueprint } from '../services/gemini';
-import { ProjectBlueprint, CardVariant, ProjectComplexity } from '../types';
+import { ProjectBlueprint, CardVariant } from '../types';
 import { GlassCard } from './GlassCard';
+import { ProjectComplexity } from '../types';
 
 interface BlueprintWizardProps {
   onBookConsultation?: (details: string) => void;
@@ -172,4 +172,3 @@ export const BlueprintWizard: React.FC<BlueprintWizardProps> = ({ onBookConsulta
     </section>
   );
 };
-    
