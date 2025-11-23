@@ -228,4 +228,3 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
     </section>
   );
 };
-    

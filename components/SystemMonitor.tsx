@@ -99,4 +99,3 @@ export const SystemMonitor: React.FC = () => {
     </div>
   );
 };
-    
