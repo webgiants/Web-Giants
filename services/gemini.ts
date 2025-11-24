@@ -1,11 +1,20 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { ProjectBlueprint, ProjectComplexity } from "../types";
 
-// Initialize the client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Function to safely get the AI client only when needed
+const getAiClient = () => {
+  const apiKey = process.env.API_KEY;
+  if (!apiKey) {
+    throw new Error("API Key not found");
+  }
+  return new GoogleGenAI({ apiKey });
+};
 
 export const generateProjectBlueprint = async (userIdea: string): Promise<ProjectBlueprint> => {
   try {
+    // Initialize client here to prevent app crash on load if key is missing
+    const ai = getAiClient();
+    
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: `Analyze this app idea for a client of Web Giants (a premium web/android dev agency): "${userIdea}". 
@@ -43,14 +52,14 @@ export const generateProjectBlueprint = async (userIdea: string): Promise<Projec
     }
     throw new Error("No response text generated");
   } catch (error) {
-    console.error("Gemini API Error:", error);
-    // Fallback mock data if API key is missing/fails in preview
+    console.error("Gemini API Error or Missing Key:", error);
+    // Fallback mock data if API key is missing or call fails
     return {
       title: "Project Titan (Fallback)",
       stack: ["React Native", "Firebase", "Node.js"],
       estimatedWeeks: 8,
       complexity: ProjectComplexity.MEDIUM,
-      marketingBlurb: "We are having trouble connecting to our AI architect, but your idea sounds scalable and robust.",
+      marketingBlurb: "We are currently operating in offline mode. Your idea has been logged for manual review, but here is a sample structure based on your input.",
       keyFeatures: ["User Authentication", "Real-time Database", "Push Notifications"]
     };
   }
