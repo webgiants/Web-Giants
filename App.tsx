@@ -46,7 +46,7 @@ function App() {
     {
       title: "Full-Stack Web",
       desc: "Robust web architectures utilizing React & Node.js. We deliver scalable, SEO-ready solutions that grow effortlessly with your business.",
-      price: "From ₹30,000",
+      price: "From ₹2,000",
       features: ["Server-Side Rendering", "Responsive", "Secure API"],
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -57,7 +57,7 @@ function App() {
     {
       title: "AI & Intelligence",
       desc: "Empower your product with next-gen AI. From chatbots to predictive models, we integrate Gemini to make your software smarter.",
-      price: "Custom Quote",
+      price: "From ₹8,000",
       features: ["LLM Integration", "Smart Analytics", "Automation"],
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
