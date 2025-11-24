@@ -35,7 +35,7 @@ function App() {
     {
       title: "Android Native",
       desc: "High-performance native apps crafted with Kotlin. We engineer for fluidity, ensuring your application feels like a natural extension of the OS.",
-      price: "From ₹45,000",
+      price: "From ₹8,000",
       features: ["Material Design 3", "Offline-First", "Play Store Launch"],
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -57,7 +57,7 @@ function App() {
     {
       title: "AI & Intelligence",
       desc: "Empower your product with next-gen AI. From chatbots to predictive models, we integrate Gemini to make your software smarter.",
-      price: "From ₹8,000",
+      price: "Integrated Natively",
       features: ["LLM Integration", "Smart Analytics", "Automation"],
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
