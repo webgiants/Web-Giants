@@ -50,7 +50,7 @@ export const DigitalClock: React.FC = () => {
         <div className="text-4xl font-display font-bold text-slate-900 tracking-tighter tabular-nums leading-none">
           {formatTime(time)}
         </div>
-        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
+        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">
           Local Time
         </div>
       </div>
@@ -62,7 +62,7 @@ export const DigitalClock: React.FC = () => {
         <div className="text-sm font-medium text-slate-700">
           {formatDate(time)}
         </div>
-        <div className="text-xs font-medium text-slate-400">
+        <div className="text-xs font-medium text-slate-500">
           {getTimezone()}
         </div>
       </div>

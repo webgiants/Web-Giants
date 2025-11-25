@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { generateProjectBlueprint } from '../services/gemini';
 import { ProjectBlueprint, CardVariant } from '../types';
@@ -58,14 +59,14 @@ export const BlueprintWizard: React.FC<BlueprintWizardProps> = ({ onBookConsulta
         {/* Input Section */}
         <div className="lg:col-span-5">
           <GlassCard variant={CardVariant.DEFAULT} className="p-8 h-full min-h-[500px] flex flex-col">
-            <label className="block text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">
+            <label className="block text-xs font-bold text-slate-500 mb-4 uppercase tracking-widest">
               Input
             </label>
             <textarea 
               value={idea}
               onChange={(e) => setIdea(e.target.value)}
               placeholder="I want a Tinder-style app for adopting shelter dogs, with real-time video calls..."
-              className="w-full flex-grow p-6 bg-slate-50 border-0 rounded-2xl text-lg text-slate-800 placeholder-slate-300 focus:ring-0 resize-none mb-6 transition-all font-medium leading-relaxed"
+              className="w-full flex-grow p-6 bg-slate-50 border-0 rounded-2xl text-lg text-slate-800 placeholder-slate-400 focus:ring-0 resize-none mb-6 transition-all font-medium leading-relaxed"
             />
             <button 
               onClick={handleGenerate}
@@ -89,7 +90,7 @@ export const BlueprintWizard: React.FC<BlueprintWizardProps> = ({ onBookConsulta
                 <svg className="w-12 h-12 text-slate-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
-                <p className="text-slate-400 font-medium">Awaiting inputs...</p>
+                <p className="text-slate-500 font-medium">Awaiting inputs...</p>
               </div>
             )}
 
@@ -111,7 +112,7 @@ export const BlueprintWizard: React.FC<BlueprintWizardProps> = ({ onBookConsulta
               <GlassCard variant={CardVariant.DEFAULT} className="p-8 h-full animate-fade-in-up border-t-4 border-t-slate-900 flex flex-col">
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1 block">Project Title</span>
+                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1 block">Project Title</span>
                     <h3 className="text-3xl font-display font-bold text-slate-900">{result.title}</h3>
                   </div>
                   <span className={`px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase ${complexityColor(result.complexity)}`}>

@@ -87,7 +87,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
                 i < step ? 'bg-primary' : 'bg-slate-200'
               }`} />
               <span className={`absolute -bottom-6 text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
-                i === step ? 'text-slate-900 opacity-100' : 'text-slate-400 opacity-0 group-hover:opacity-100'
+                i === step ? 'text-slate-900 opacity-100' : 'text-slate-500 opacity-0 group-hover:opacity-100'
               }`}>
                 {s.title}
               </span>
@@ -101,39 +101,48 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
           <div className="animate-fade-in-up">
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-2">{steps[step].title}</h3>
-              <p className="text-slate-400 text-sm">{steps[step].subtitle}</p>
+              <p className="text-slate-500 text-sm">{steps[step].subtitle}</p>
             </div>
 
             {step === 0 && (
               <div className="space-y-5">
                 <div className="group">
+                  <label htmlFor="name" className="sr-only">Your Name</label>
                   <input 
+                    id="name"
                     type="text" 
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 text-lg font-medium text-slate-900 placeholder-slate-300 focus:border-slate-900 focus:outline-none transition-colors"
+                    aria-label="Your Name"
+                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 text-lg font-medium text-slate-900 placeholder-slate-400 focus:border-slate-900 focus:outline-none transition-colors"
                   />
                 </div>
                 <div className="group">
+                  <label htmlFor="email" className="sr-only">Email Address</label>
                   <input 
+                    id="email"
                     type="email" 
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email Address"
-                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 text-lg font-medium text-slate-900 placeholder-slate-300 focus:border-slate-900 focus:outline-none transition-colors"
+                    aria-label="Email Address"
+                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 text-lg font-medium text-slate-900 placeholder-slate-400 focus:border-slate-900 focus:outline-none transition-colors"
                   />
                 </div>
                 <div className="group">
+                  <label htmlFor="company" className="sr-only">Company (Optional)</label>
                   <input 
+                    id="company"
                     type="text" 
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Company (Optional)"
-                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 text-lg font-medium text-slate-900 placeholder-slate-300 focus:border-slate-900 focus:outline-none transition-colors"
+                    aria-label="Company (Optional)"
+                    className="w-full bg-transparent border-b-2 border-slate-200 py-3 text-lg font-medium text-slate-900 placeholder-slate-400 focus:border-slate-900 focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -146,6 +155,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
                     <button
                       key={type}
                       type="button"
+                      aria-label={`Select ${type} project type`}
                       onClick={() => setFormData(prev => ({ ...prev, projectType: type as any }))}
                       className={`py-4 px-2 rounded-2xl text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
                         formData.projectType === type 
@@ -157,10 +167,13 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
                     </button>
                   ))}
                 </div>
+                <label htmlFor="details" className="sr-only">Project Details</label>
                 <textarea 
+                  id="details"
                   name="details"
                   value={formData.details}
                   onChange={handleChange}
+                  aria-label="Describe your vision"
                   className="w-full h-40 p-5 bg-slate-50 border border-slate-100 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/5 resize-none transition-all"
                   placeholder="Describe your vision. Core features, design preferences, or similar apps..."
                 />
@@ -172,13 +185,14 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
                 <div>
                   <label className="block text-sm font-bold text-slate-500 mb-4 uppercase tracking-wider">Estimated Budget</label>
                   <div className="space-y-3">
-                    {budgetOptions.map((b) => (
+                    {budgetOptions.map((b, idx) => (
                       <label key={b} className={`flex items-center p-4 rounded-xl cursor-pointer transition-all border ${
                         formData.budget === b 
                           ? 'border-slate-900 bg-slate-50 shadow-sm' 
                           : 'border-transparent hover:bg-slate-50'
                       }`}>
                         <input 
+                          id={`budget-${idx}`}
                           type="radio" 
                           name="budget" 
                           value={b}
@@ -199,7 +213,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialDetails }) => {
             <button 
               type="button"
               onClick={prevStep}
-              className={`text-sm font-bold text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-wider ${step === 0 ? 'invisible' : ''}`}
+              className={`text-sm font-bold text-slate-500 hover:text-slate-900 transition-colors uppercase tracking-wider ${step === 0 ? 'invisible' : ''}`}
             >
               Back
             </button>

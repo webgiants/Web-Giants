@@ -81,17 +81,17 @@ export const SystemMonitor: React.FC = () => {
       <div className="flex gap-4 relative z-10">
         <div className="flex flex-col items-center md:items-start">
           <div className="text-lg font-display font-bold text-slate-900 leading-none tabular-nums">
-            {latency}<span className="text-[10px] text-slate-400 font-sans ml-0.5">ms</span>
+            {latency}<span className="text-[10px] text-slate-500 font-sans ml-0.5">ms</span>
           </div>
-          <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
+          <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">
             Ping
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start">
           <div className="text-lg font-display font-bold text-slate-900 leading-none tabular-nums">
-            {fps}<span className="text-[10px] text-slate-400 font-sans ml-0.5">fps</span>
+            {fps}<span className="text-[10px] text-slate-500 font-sans ml-0.5">fps</span>
           </div>
-          <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
+          <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">
             Render
           </div>
         </div>
